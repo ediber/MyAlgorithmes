@@ -10,8 +10,8 @@
         android:id="@+id/tree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         android:text="tree"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,4 +24,78 @@
         android:text="heap"
         app:layout_constraintStart_toEndOf="@+id/tree"
         app:layout_constraintTop_toTopOf="@+id/tree" />
+
+    <Button
+        android:id="@+id/Interviewbit_Arrays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="Interviewbit_Arrays"
+        app:layout_constraintStart_toStartOf="@+id/tree"
+        app:layout_constraintTop_toBottomOf="@+id/tree" />
+
+    <Button
+        android:id="@+id/Interviewbit_Math"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:text="Interviewbit_Math"
+        app:layout_constraintStart_toEndOf="@+id/Interviewbit_Arrays"
+        app:layout_constraintTop_toTopOf="@+id/Interviewbit_Arrays" />
+
+    <Button
+        android:id="@+id/hackerrank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="60dp"
+        android:text="hackerrank"
+        app:layout_constraintStart_toStartOf="@+id/Interviewbit_Arrays"
+        app:layout_constraintTop_toBottomOf="@+id/Interviewbit_Arrays" />
+
+    <Button
+        android:id="@+id/Interviewbit_String"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="Interviewbit_String"
+        app:layout_constraintStart_toEndOf="@+id/hackerrank"
+        app:layout_constraintTop_toTopOf="@+id/hackerrank" />
+
+    <Button
+        android:id="@+id/Interviewbit_twoPointers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Interviewbit_twoPointers"
+        app:layout_constraintStart_toStartOf="@+id/hackerrank"
+        app:layout_constraintTop_toBottomOf="@+id/hackerrank" />
+
+    <Button
+        android:id="@+id/graph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="32dp"
+        android:text="graph"
+        app:layout_constraintStart_toEndOf="@+id/Interviewbit_twoPointers"
+        app:layout_constraintTop_toBottomOf="@+id/Interviewbit_String" />
+
+    <Button
+        android:id="@+id/Interviewbit_Binary_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Interviewbit_Binary_search"
+        app:layout_constraintStart_toStartOf="@+id/Interviewbit_twoPointers"
+        app:layout_constraintTop_toBottomOf="@+id/Interviewbit_twoPointers" />
+
+    <Button
+        android:id="@+id/leet_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="leet_code"
+        app:layout_constraintStart_toStartOf="@+id/Interviewbit_Binary_search"
+        app:layout_constraintTop_toBottomOf="@+id/Interviewbit_Binary_search" />
 </androidx.constraintlayout.widget.ConstraintLayout>
