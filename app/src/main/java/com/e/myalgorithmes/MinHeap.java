@@ -4,34 +4,46 @@ import androidx.annotation.NonNull;
 
 public class MinHeap {
     final int INIT = 5;
-    int lastIndex;
+    int size;
     int[] arr;
 
     public MinHeap() {
         arr = new int[INIT];
-        lastIndex = 0;
+        size = 0;
     }
 
     public void insert(int num){
-        if(lastIndex == arr.length - 1){
+        if(size == arr.length - 1){
             doubleUpArr();
         }
-        arr[lastIndex] = num;
-        heapifyUp(lastIndex);
-        lastIndex++;
+        arr[size] = num;
+        heapifyUp(size);
+        size++;
     }
 
     public void delete(int i){
-        arr[i] = Integer.MAX_VALUE;
+        arr[i] = Integer.MIN_VALUE;
         heapifyUp(i);
-        swap(0, lastIndex);
-        lastIndex --;
+        //swap(0, lastIndex);
+        arr[0] = arr[size-1];
+        size--;
         heapifyDown(0);
     }
 
     private void heapifyDown(int i) {
         int index = i;
-        //while ()
+        boolean b = true;
+        while (index <= size){
+            if(leftChild(index) < size && arr[leftChild(index)] < arr[index]){
+                swap(leftChild(index), index);
+                index = leftChild(index);
+            } else if(leftChild(index) < size && arr[rightChild(index)] < arr[index]){
+                swap(rightChild(index), index);
+                index = rightChild(index);
+            } else {
+                break;
+            }
+        }
     }
 
     private void heapifyUp(int i) {
@@ -61,7 +73,7 @@ public class MinHeap {
     }
 
     private void doubleUpArr() {
-        int[] temp = new int[2 * (lastIndex +1)];
+        int[] temp = new int[2 * (size +1)];
         for (int i = 0; i < arr.length; i++) {
             temp[i] = arr[i];
         }
@@ -76,7 +88,7 @@ public class MinHeap {
     @Override
     public String toString() {
         String ans = "";
-        for (int i = 0; i < lastIndex; i++) {
+        for (int i = 0; i < size; i++) {
             ans += arr[i] + ", ";
         }
         return ans;

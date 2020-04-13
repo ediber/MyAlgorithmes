@@ -55,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.d("algo", heap.toString());
 
+                heap.delete(4);
+                Log.d("algo", heap.toString());
+
             }
         });
 
@@ -200,25 +203,38 @@ public class MainActivity extends AppCompatActivity {
                 l.validateStackSequences(arr5, arr6);*/
 
                 ArrayList<List<String>> equations = new ArrayList<>();
-                equations.add(Arrays.asList("x1","x2"));
-                equations.add(Arrays.asList("x2","x3"));
-                equations.add(Arrays.asList("x1","x4"));
-                equations.add(Arrays.asList("x2","x5"));
+                equations.add(Arrays.asList("x1", "x2"));
+                equations.add(Arrays.asList("x2", "x3"));
+                equations.add(Arrays.asList("x1", "x4"));
+                equations.add(Arrays.asList("x2", "x5"));
 
-                double[] values = {3.0,0.5,3.4,5.6};
+                double[] values = {3.0, 0.5, 3.4, 5.6};
                 ArrayList<List<String>> queries = new ArrayList<>();
 
-                queries.add(Arrays.asList("x2","x4"));
-                queries.add(Arrays.asList("x1","x5"));
-                queries.add(Arrays.asList("x1","x3"));
-                queries.add(Arrays.asList("x5","x5"));
-                queries.add(Arrays.asList("x5","x1"));
-                queries.add(Arrays.asList("x3","x4"));
-                queries.add(Arrays.asList("x4","x3"));
-                queries.add(Arrays.asList("x6","x6"));
-                queries.add(Arrays.asList("x0","x0"));
+                queries.add(Arrays.asList("x2", "x4"));
+                queries.add(Arrays.asList("x1", "x5"));
+                queries.add(Arrays.asList("x1", "x3"));
+                queries.add(Arrays.asList("x5", "x5"));
+                queries.add(Arrays.asList("x5", "x1"));
+                queries.add(Arrays.asList("x3", "x4"));
+                queries.add(Arrays.asList("x4", "x3"));
+                queries.add(Arrays.asList("x6", "x6"));
+                queries.add(Arrays.asList("x0", "x0"));
 
-                l.calcEquation(equations, values, queries);
+                //              l.calcEquation(equations, values, queries);
+
+//                int[] arr5 = {1,3,1,4,23};
+//                l.isSequence(arr5, 8);
+
+                LeetCode_Kotlin lk = new LeetCode_Kotlin();
+//                int[] arr6 = {1,2,3,3,4,5};
+//                lk.isPossible(arr6);
+
+//                ArrayList<String> arr7 = new ArrayList<>(
+//                        Arrays.asList("hello", "world"));
+
+//                LeetCode_Kotlin.Codec c = new LeetCode_Kotlin.Codec();
+//                String s = c.encode(arr7);
 
             }
         });

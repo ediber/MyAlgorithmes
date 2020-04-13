@@ -1,20 +1,25 @@
 package com.e.myalgorithmes;
 
 
+import android.os.Build;
 import android.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
+
+import androidx.annotation.RequiresApi;
 
 public class LeetCode {
 
@@ -1068,7 +1073,6 @@ public class LeetCode {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
     boolean[] visited;
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
 
@@ -1099,6 +1103,58 @@ public class LeetCode {
             dfs3(rooms, keys.get(i));
         }
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> heap =
+                new PriorityQueue<Integer>(new Comparator<Integer>() {
+                    @Override
+                    public int compare(Integer o1, Integer o2) {
+                        return o1 - o2;
+                    }
+                });
+
+        for (Integer num: nums) {
+            heap.add(num);
+            if(heap.size() > k){
+                heap.poll();
+            }
+        }
+        return heap.poll();
+    }
+
+    ////////////////////////////////////////////////////////////////////////////
+    boolean isSequence(int[] arr, int dest){
+        int l = 0;
+        int r = 0;
+        int sum = 0;
+
+
+        while(r < arr.length - 1 || l < arr.length - 1){
+            if(sum == dest){
+                return true;
+            }
+            if(sum < dest){
+                sum = sum + arr[r];
+                r ++;
+            } else { // larger
+                sum = sum - arr[l];
+                l ++;
+            }
+        }
+
+        if(sum == dest){
+            return true;
+        }
+
+
+
+        return false;
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////
 
 
 }
